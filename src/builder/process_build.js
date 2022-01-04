@@ -27,7 +27,7 @@ function prepareForBuild (repoFullName, gitUrl, repoDir, launcherDir, useGeneric
 	console.log('Cloning repositories...');
 
 	partialClone(gitUrl, repoDir, 'dist_cfg');
-	clone('https://github.com/gajop/spring-launcher.git', launcherDir);
+	clone('https://github.com/beyond-all-reason/spring-launcher.git', launcherDir);
 
 	console.log('Creating package.json...');
 	const version = getVersionFromGit(repoDir);

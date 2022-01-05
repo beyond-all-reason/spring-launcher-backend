@@ -24,7 +24,7 @@ function buildRepository (repoDir, launcherDir, buildDir, buildInfo, shouldPubli
 	execSync('npm install', { cwd: buildDir });
 	execSync('npm ci', { cwd: buildDir });
 	if (buildTypes.includes('linux')) {
-		execSync(`npm run build-linux ${shouldPublish ? '-- --publish always' : ''}`, { cwd: buildDir });
+		execSync(`npm run build-linux ${shouldPublish ? '-- --publish always' : ''}`, { cwd: buildDir, stdio: "inherit"});
 	}
 	if (buildTypes.includes('windows-portable')) {
 		execSync('npm run build-win-portable', { cwd: buildDir });
